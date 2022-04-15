@@ -1,5 +1,13 @@
 # VibinBuntu
 
+## Quick Start
+
+```
+# cd to the directory where you cloned this repo
+./vibinbuntu.sh
+# you will have to sudo to install viber, etc - but other than that - on completion, you should have a working install of viber on your machine
+```
+
 ## 22.04 and beyond... Jammin & Vibin
 
 Alright... what is this repo for really?
@@ -13,8 +21,13 @@ Fortunately - other folks seem to have run into, ans subsequently solved this is
 Since I like automating even the most trivial of tasks, and since what is trivial for me and my fellow Linux enthusiasts might not be as trivial for some of my friends who use Linux (partly due to my convincing them), I figured I'd automate this workaround to get Viber working as a small script.  Hopefully this helps some folks out till we get an officially supported binary from Viber.
 
 Here's an outline of what the script does:
+
 a. Download and instal the Viber deb from their website
+
 b. Download **but not install** the Ubuntu 21.10 libssl deb
+
   b.i. Extract relevant portions of this deb into /opt/viber/
+
 c. Provide a wrapper script that sets the LD paths correctly to use the Ubuntu 21.10 libssl shared objects.  I couldn't get the .desktop file working when I tried to directly provide LD_PRELOAD and LD_LIBRARY_PATH in the Exec line of the .desktop file, so had to do this workaround instead
+
 d. Provide a .desktop file that invokes the wrapper instead of the Viber provided binary
