@@ -15,11 +15,11 @@ wait;
 
 echo "Installing Viber deb";
 # We will need 'ar' from 'binutils' for the next step
-sudo apt install -y ./${VIBDEB} binutils;
+sudo apt install -y ./viber.deb binutils;
 
 echo "extracting libssl shared objects locally";
-ar vx libssl*.deb;
-tar xvf data.tar.zst;
+ar x libssl*.deb;
+tar xf data.tar.zst;
 echo "copying files and folders to /opt/viber";
 sudo cp -r usr/lib/x86_64-linux-gnu/ /opt/viber/ssl;
 # The Viber binary is 'Viber' with an uppercase V
