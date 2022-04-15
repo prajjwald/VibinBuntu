@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export LD_LIBRARY_PATH=/opt/viber/ssl:${LD_LIBRARY_PATH};
+export LD_PRELOAD=/opt/viber/ssl/libssl.so.1.1;
+
+exec /opt/viber/Viber;
